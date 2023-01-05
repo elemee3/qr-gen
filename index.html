@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>QR Generator</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <main>
+            <h1>QR Generator</h1>
+            <div>
+                <span>Enter site URL: </span>
+                <input id="site-input" />
+                <button type="submit" onclick="getQRCode()">Submit</button>
+            </div>
+            <div id="qrcode"></div>
+        </main>
+        <script type="text/javascript" src="node_modules/easyqrcodejs/src/easy.qrcode.js"></script>
+        <script>
+          function getQRCode() {
+            const options = {
+              text: document.getElementById("site-input").value
+            };
+
+          // Create QRCode Object
+          new QRCode(document.getElementById("qrcode"), options);
+          }
+        </script>
+    </body>
+</html>
